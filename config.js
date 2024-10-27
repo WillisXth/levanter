@@ -9,7 +9,7 @@ const DATABASE_URL =
 process.env.DATABASE_URL === undefined ? databasePath : process.env.DATABASE_URL
 module.exports = {
   VERSION: require('./package.json').version,
-  SESSION_ID: (process.env.SESSION_ID || 'levanter_2791f9b19d631746d5b807a3c187ad745a').trim(),
+  SESSION_ID: (process.env.SESSION_ID || '').trim(),
   DATABASE:
     DATABASE_URL === databasePath
       ? new Sequelize({
@@ -32,7 +32,7 @@ module.exports = {
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
   HEROKU_API_KEY: process.env.HEROKU_API_KEY,
   BRANCH: 'master',
-  STICKER_PACKNAME: process.env.STICKER_PACKNAME || 'Zam',
+  STICKER_PACKNAME: process.env.STICKER_PACKNAME || 'Trace,Will',
   ALWAYS_ONLINE: process.env.ALWAYS_ONLINE,
   LOG_MSG: process.env.LOG_MSG || 'false',
   RMBG_KEY: process.env.RMBG_KEY || 'null',
@@ -48,7 +48,7 @@ module.exports = {
   ANTIWORDS: process.env.ANTIWORDS || 'word',
   MENTION: process.env.MENTION || '',
   MAX_UPLOAD: process.env.MAX_UPLOAD || 230,
-  REJECT_CALL: process.env.REJECT_CALL || 'false',
+  REJECT_CALL: process.env.REJECT_CALL,
   VPS: toBool(process.env.VPS),
   AUTO_STATUS_VIEW: (process.env.AUTO_STATUS_VIEW || 'no-dl').trim(),
   SEND_READ: process.env.SEND_READ,
